@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'crea-autore',
+    loadChildren: () => import('./pages/autori/crea-autore/crea-autore.module').then( m => m.CreaAutorePageModule)
+  },
+  {
+    path: 'lista-autori',
+    loadChildren: () => import('./pages/autori/lista-autori/lista-autori.module').then( m => m.ListaAutoriPageModule)
+  },
 ];
 
 @NgModule({
@@ -18,5 +26,5 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
-})
+})  
 export class AppRoutingModule { }
