@@ -1,9 +1,34 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>creaAutore</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-toolbar-superiore></app-toolbar-superiore>
+<br />
 <ion-content>
-
+  <div class="padding">
+    <ion-button color="secondary" routerLink="/home">❮</ion-button>
+    <h1>Crea Autore</h1>
+  </div>
+  <br /><br />
+  <div class="padding">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <p style="padding-left: 10%">Nome</p>
+        <ion-col>
+          <ion-item style="padding-left: 20%">
+            <ion-input placeholder="Nome" color="primary"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <p style="padding-left: 10%">Cognome</p>
+        <ion-col>
+          <ion-item style="padding-left: 20%">
+            <ion-input placeholder="Cognome" color="primary"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <br />
+      <ion-row>
+        <ion-col class="ion-text-right">
+          <ion-button color="secondary"> Salva </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
+<app-toolbar-inferiore></app-toolbar-inferiore>
