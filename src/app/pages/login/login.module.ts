@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -15,7 +15,8 @@ import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/too
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ToolbarInferioreModule
+    ToolbarInferioreModule,
+    ReactiveFormsModule,
   ],
   declarations: [LoginPage]
 })
