@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ToolbarInferioreComponent } from '../toolbar-inferiore/toolbar-inferiore.component';
 import { ToolbarSuperioreComponent } from './toolbar-superiore.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,7 +13,8 @@ import { ToolbarSuperioreComponent } from './toolbar-superiore.component';
   imports: [
     CommonModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ]
   ,exports: [ToolbarSuperioreComponent]
 })

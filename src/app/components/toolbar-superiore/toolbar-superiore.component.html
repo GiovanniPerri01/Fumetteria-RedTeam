@@ -1,12 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <div class="padding">
-      <img src="assets/icon/logo_devskill@2x.png" width="6%" />
-    </div></ion-toolbar>
+    <ion-menu-toggle></ion-menu-toggle>
+    <ion-menu-button slot="start" color="primary"></ion-menu-button>
+    <div class="center">
+      <img
+        src="assets/icon/logo_devskill@2x.png"
+        width="6%"
+        [routerLink]="['/home']"
+      />
+    </div>
+    
+  </ion-toolbar>
 </ion-header>
 
-<ion-toolbar color="primary">
-
-</ion-toolbar>
-
-
+<ion-toolbar color="primary"> </ion-toolbar>

@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'crea-fumetto',
+    loadChildren: () => import('./pages/fumetti/crea-fumetto/crea-fumetto.module').then( m => m.CreaFumettoPageModule)
   },
+  {
+    path: 'lista-fumetti',
+    loadChildren: () => import('./pages/fumetti/lista-fumetti/lista-fumetti.module').then( m => m.ListaFumettiPageModule)
+  },
+
 ];
 
 @NgModule({

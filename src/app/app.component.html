@@ -1,15 +1,72 @@
 <ion-app>
   <ion-menu contentId="main-content" type="overlay">
-    <ion-buttons>
-      <ion-menu-toggle slot="start">
-        <ion-menu-button></ion-menu-button>
+    <ion-buttons style="padding-bottom: 2%">
+      <ion-menu-toggle slot="start" class="center">
+        <ion-menu-button color="primary"></ion-menu-button>
       </ion-menu-toggle>
     </ion-buttons>
     <ion-content color="secondary">
-      <ion-list>
-        <ion-item>
-        </ion-item>
-      </ion-list>
+      <div class="center">
+        <img src="assets/icon/logo_devskill@2x.png" width="30%" style="padding-top: 10%; padding-bottom: 10%;">
+      </div>
+      
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item routerLink="/home" color="secondary">
+            <ion-label> Home </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
+      <div>
+      <ion-item (click)="autori === 1 ? autori = 0 : autori = 1" color="secondary" button="true">
+        <ion-label>
+        Autore
+      </ion-label>
+      </ion-item>
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item [hidden]="!autori" [routerLink]="['/crea-autore']"
+            color="secondary">
+            <ion-label style="padding-left: 15%;">Crea Autore</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item menuclose [hidden]="!autori" [routerLink]="['/lista-autori']"
+            color="secondary">
+            <ion-label style="padding-left: 15%;">Lista Autori</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+    </div>
+
+    <div>
+      <ion-item (click)="fumetti === 1 ? fumetti = 0 : fumetti = 1" color="secondary" button="true">
+        <ion-label>
+        Fumetto
+      </ion-label>
+      </ion-item>
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item [hidden]="!fumetti" [routerLink]="['/crea-fumetto']"
+            color="secondary">
+            <ion-label style="padding-left: 15%;">Crea Fumetto</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item menuclose [hidden]="!fumetti" [routerLink]="['/lista-fumetti']"
+            color="secondary">
+            <ion-label style="padding-left: 15%;">Lista Fumetti</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+    </div>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main-content"></ion-router-outlet>

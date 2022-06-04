@@ -1,4 +1,8 @@
-.padding{
+.center{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: transperent;
     padding-top: 0.5%;
-    text-align:center;
 }
