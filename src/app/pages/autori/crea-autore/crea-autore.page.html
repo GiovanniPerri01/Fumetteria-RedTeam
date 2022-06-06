@@ -14,6 +14,9 @@
           <ion-col>
             <ion-item style="padding-left: 20%">
               <ion-input
+                id="nome"
+                name="nome"
+                [(ngModel)]="nome"
                 placeholder="Nome"
                 color="primary"
                 type="text"
@@ -25,6 +28,9 @@
           <ion-col>
             <ion-item style="padding-left: 20%">
               <ion-input
+                id="cognome"
+                name="cognome"
+                [(ngModel)]="cognome"
                 placeholder="Cognome"
                 color="primary"
                 type="text"
@@ -37,7 +43,7 @@
         <br />
         <ion-row>
           <ion-col class="ion-text-right">
-            <ion-button color="secondary" [disabled]="!salvaform.valid">
+            <ion-button color="secondary" [disabled]="!salvaform.valid" (click)="salvaAutore()">
               Salva
             </ion-button>
           </ion-col>
