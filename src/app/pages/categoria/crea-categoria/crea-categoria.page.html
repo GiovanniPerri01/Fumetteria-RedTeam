@@ -1,6 +1,7 @@
 <app-toolbar-superiore></app-toolbar-superiore>
 <br />
 <ion-content>
+  <form [formGroup]="categoriaForm"> 
   <div class="padding">
     <ion-button color="secondary" routerLink="/home">❮</ion-button>
     <h1>Crea Categoria</h1>
@@ -12,23 +13,24 @@
         <p style="padding-left: 10%">Nome</p>
         <ion-col>
           <ion-item style="padding-left: 20%">
-            <ion-input placeholder="Nome" color="primary"> </ion-input>
+            <ion-input placeholder="Nome" color="primary" type="text" formControlName="nome"> </ion-input>
           </ion-item>
         </ion-col>
         <p style="padding-left: 10%">Descirzione</p>
         <ion-col>
           <ion-item style="padding-left: 20%">
-            <ion-textarea placeholder="Descirzione" color="primary"> </ion-textarea>
+            <ion-textarea placeholder="Descirzione" color="primary" type="text" formControlName="descrizione"> </ion-textarea>
           </ion-item>
         </ion-col>
       </ion-row>
       <br />
       <ion-row>
         <ion-col class="ion-text-right">
-          <ion-button color="secondary"> Salva </ion-button>
+          <ion-button color="secondary" [disabled]="!categoriaForm.valid"> Salva </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
+</form>
 </ion-content>
 <app-toolbar-inferiore></app-toolbar-inferiore>
