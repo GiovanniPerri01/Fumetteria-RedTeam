@@ -1,36 +1,56 @@
 <app-toolbar-superiore></app-toolbar-superiore>
 <br />
 <ion-content>
-  <form [formGroup]="categoriaForm"> 
-  <div class="padding">
-    <ion-button color="secondary" routerLink="/home">❮</ion-button>
-    <h1>Crea Categoria</h1>
-  </div>
-  <br /><br />
-  <div class="padding">
-    <ion-grid>
-      <ion-row class="ion-align-items-center">
-        <p style="padding-left: 10%">Nome</p>
-        <ion-col>
-          <ion-item style="padding-left: 20%">
-            <ion-input placeholder="Nome" color="primary" type="text" formControlName="nome"> </ion-input>
-          </ion-item>
-        </ion-col>
-        <p style="padding-left: 10%">Descirzione</p>
-        <ion-col>
-          <ion-item style="padding-left: 20%">
-            <ion-textarea placeholder="Descirzione" color="primary" type="text" formControlName="descrizione"> </ion-textarea>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <br />
-      <ion-row>
-        <ion-col class="ion-text-right">
-          <ion-button color="secondary" [disabled]="!categoriaForm.valid"> Salva </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-</form>
+  <form [formGroup]="categoriaForm">
+    <div class="padding">
+      <ion-button color="secondary" routerLink="/home">❮</ion-button>
+      <h1>Crea Categoria</h1>
+    </div>
+    <br /><br />
+    <div class="padding">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <p style="padding-left: 10%">Nome</p>
+          <ion-col>
+            <ion-item style="padding-left: 20%">
+              <ion-input
+                id="nome"
+                name="nome"
+                placeholder="Nome"
+                color="primary"
+                type="text"
+                formControlName="nome"
+                [(ngModel)]="name"
+              >
+              </ion-input>
+            </ion-item>
+          </ion-col>
+          <p style="padding-left: 10%">Descrizione</p>
+          <ion-col>
+            <ion-item style="padding-left: 20%">
+              <ion-textarea
+                id="descrizione"
+                name="descrizione"
+                placeholder="Descrizione"
+                color="primary"
+                type="text"
+                formControlName="descrizione"
+                [(ngModel)]="description"
+              >
+              </ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <br />
+        <ion-row>
+          <ion-col class="ion-text-right">
+            <ion-button color="secondary" [disabled]="!categoriaForm.valid" (click)="creaCategoria()">
+              Salva
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </form>
 </ion-content>
 <app-toolbar-inferiore></app-toolbar-inferiore>
