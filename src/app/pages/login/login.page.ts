@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserDTO } from 'src/app/model/package/dto/user-dto';
 import { LoginService } from './login.service';
 
 @Component({
@@ -26,12 +27,9 @@ export class LoginPage implements OnInit {
 
   login(){
     this.servizioLogin.login(this.username, this.password).subscribe((resp) =>{
-      if(resp){
-        this.router.navigate(['/home']);
-      }
-      else{
-        alert("asd");
-      }
+      const user:UserDTO = resp;
+      console.log(user);
+      this.router.navigate(['/home']);
     });
   }
 
