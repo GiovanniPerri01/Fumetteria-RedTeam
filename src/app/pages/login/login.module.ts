@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/toolbar-inferiore.module';
+import { ToolbarSuperioreModule } from 'src/app/components/toolbar-superiore/toolbar-superiore.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/too
     IonicModule,
     LoginPageRoutingModule,
     ToolbarInferioreModule,
+    ToolbarSuperioreModule,
     ReactiveFormsModule,
   ],
   declarations: [LoginPage]

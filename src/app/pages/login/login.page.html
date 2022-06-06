@@ -7,7 +7,7 @@
     <img src="assets/icon/logo_devskill@2x.png" width="8%" />
   </div>
 
-  <form [formGroup]="loginform">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
     <br />
     <ion-grid>
       <ion-row class="ion-text-center">
@@ -21,9 +21,12 @@
         <ion-col>
           <ion-item>
             <ion-input
+              id="username"
+              name="username"
               color="primary"
               placeholder="username"
-              type="email"
+              type="text"
+              [(ngModel)]="username"
               formControlName="username"
             ></ion-input>
             <ion-icon color="secondary" slot="end" name="mail"></ion-icon>
@@ -38,9 +41,12 @@
         <ion-col>
           <ion-item>
             <ion-input
+              id="pass"
+              name="pass"
               color="primary"
               placeholder="password"
               type="password"
+              [(ngModel)]="password"  
               formControlName="password"
             ></ion-input>
             <ion-icon
@@ -56,8 +62,20 @@
       <ion-row>
         <ion-col></ion-col>
         <ion-col class="ion-text-right">
-          <ion-button color="secondary" [disabled]="!loginform.valid">Login</ion-button>
+          <ion-button color="secondary" [disabled]="!loginForm.valid" type="submit">Login</ion-button>
         </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col></ion-col>
+
+        <ion-col>
+          <div *ngIf="loginForm.errors?.unauthenticated">
+            <label class="ion-text-center">ASD</label>
+          </div>
+        </ion-col>
+
         <ion-col></ion-col>
       </ion-row>
     </ion-grid>
