@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crea-autore',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crea-autore.page.scss'],
 })
 export class CreaAutorePage implements OnInit {
+  salvaform;
 
-  constructor() { }
+  constructor(private fb:FormBuilder) {
+    this.salvaform = fb.group({
+      nome: ['', [Validators.required]],
+      cognome: ['', [Validators.required]]
+    })
+   }
 
   ngOnInit() {
   }
