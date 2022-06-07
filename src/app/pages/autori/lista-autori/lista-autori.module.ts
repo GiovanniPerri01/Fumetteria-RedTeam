@@ -9,6 +9,7 @@ import { ListaAutoriPageRoutingModule } from './lista-autori-routing.module';
 import { ListaAutoriPage } from './lista-autori.page';
 import { ToolbarSuperioreModule } from 'src/app/components/toolbar-superiore/toolbar-superiore.module';
 import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/toolbar-inferiore.module';
+import { OggettoAutoreModule } from 'src/app/components/oggetto-autore/oggetto-autore.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/too
     IonicModule,
     ListaAutoriPageRoutingModule,
     ToolbarSuperioreModule,
-    ToolbarInferioreModule
+    ToolbarInferioreModule,
+    OggettoAutoreModule
   ],
   declarations: [ListaAutoriPage]
 })

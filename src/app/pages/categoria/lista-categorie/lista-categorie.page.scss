@@ -2,3 +2,10 @@
     padding-left:15%;
     padding-right:15%;
 }
+
+.app-toolbar-inferiore {
+    position: sticky;
+    position: -webkit-sticky; 
+    bottom: 0; 
+    z-index: 1000;
+}
