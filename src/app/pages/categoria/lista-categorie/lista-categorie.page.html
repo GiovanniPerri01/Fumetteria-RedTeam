@@ -11,12 +11,12 @@
       <ion-row class="ion-align-items-center">
         <ion-col style="padding-left: 10%">
           <ion-card style="background-color: rgba(210, 210, 210, 0.365)">
-            <ion-input placeholder="Nome" color="secondary"></ion-input>
+            <ion-input placeholder="NOME" color="secondary"></ion-input>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card style="background-color: rgba(210, 210, 210, 0.365)">
-            <ion-input placeholder="Descrizione" color="secondary"></ion-input>
+            <ion-input placeholder="DESCRIZIONE" color="secondary"></ion-input>
           </ion-card>
         </ion-col>
       </ion-row>
@@ -33,10 +33,17 @@
   <div class="padding">
     <ion-grid>
       <ion-row style="background-color: #082444; color: white">
-        <ion-col> Nome </ion-col>
-        <ion-col> Descrizione </ion-col>
-        <ion-col> Azioni </ion-col>
+        <ion-col> NOME </ion-col>
+        <ion-col> DESCRIZIONE </ion-col>
+        <ion-col class="ion-text-center"> AZIONE </ion-col>
       </ion-row>
+      <ion-grid>
+        <app-oggetto-categoria
+          *ngFor="let Categoria of lista"
+          nome="{{Categoria.name}}"
+          descrizione="{{Categoria.description}}"
+        ></app-oggetto-categoria>
+      </ion-grid>
     </ion-grid>
     <br /><br />
   </div>

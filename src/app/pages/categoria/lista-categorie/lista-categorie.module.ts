@@ -9,6 +9,7 @@ import { ListaCategoriePageRoutingModule } from './lista-categorie-routing.modul
 import { ListaCategoriePage } from './lista-categorie.page';
 import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/toolbar-inferiore.module';
 import { ToolbarSuperioreModule } from 'src/app/components/toolbar-superiore/toolbar-superiore.module';
+import { OggettoCategoriaModule } from 'src/app/components/oggetto-categoria/oggetto-categoria.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ToolbarSuperioreModule } from 'src/app/components/toolbar-superiore/too
     IonicModule,
     ListaCategoriePageRoutingModule,
     ToolbarInferioreModule,
-    ToolbarSuperioreModule
+    ToolbarSuperioreModule,
+    OggettoCategoriaModule
   ],
   declarations: [ListaCategoriePage]
 })
