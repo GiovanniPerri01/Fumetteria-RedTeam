@@ -1,6 +1,16 @@
 <app-toolbar-superiore></app-toolbar-superiore>
 
 <ion-content [fullscreen]="true">
-
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center" *ngFor="let Fumetto of lista">
+        <app-card-fumetti
+          name="{{Fumetto.name}}"
+          author=" {{Fumetto.author.name}} {{Fumetto.author.surname}} "
+        >
+        </app-card-fumetti>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <app-toolbar-inferiore></app-toolbar-inferiore>

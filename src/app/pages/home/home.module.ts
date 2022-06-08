@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { ToolbarSuperioreModule } from 'src/app/components/toolbar-superiore/toolbar-superiore.module';
 import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/toolbar-inferiore.module';
+import { CardFumettiModule } from 'src/app/components/card-fumetti/card-fumetti.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ToolbarInferioreModule } from 'src/app/components/toolbar-inferiore/too
     IonicModule,
     HomePageRoutingModule,
     ToolbarSuperioreModule,
-    ToolbarInferioreModule
+    ToolbarInferioreModule,
+    CardFumettiModule
   ],
   declarations: [HomePage]
 })
