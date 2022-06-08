@@ -11,26 +11,34 @@ import { LoginService } from './login.service';
 })
 export class LoginPage implements OnInit {
 
-  loginForm;
+  loginForm; //si riferisce al nome del FormGroup
   username:string;
   password:string;
 
   constructor(private fb:FormBuilder, private servizioLogin:LoginService, private router:Router) {
+  //abbiamo creato un oggetto fb di tipo FormBuilder per poter verificare che i campi siano presenti e validi
+  //username e password; 
+  // per l'username viene richiesta la validazione di tipo email;
+  //per la password una lunghezza minima di 8 caratteri;
     this.loginForm = fb.group({
       username: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })
-   }
+   }  
 
   ngOnInit() {
   }
 
   login(){
     this.servizioLogin.login(this.username, this.password).subscribe((resp) =>{
-      const user:UserDTO = resp;
+      const user:UserDTO = resp; 
       console.log(user);
       this.router.navigate(['/home']);
-    });
+    }); 
+    //la funzione login() permette di mandare i dati presi in input al serivzio di Login che li controlla permettendo l'accesso alla homepage.
+    //servizioLogin è un oggetto dichirato nel costruttore di tipo LoginService che permette di vedere quello che sta dentro la pagina di service;
+    //this.servizioLogin.login comunica con la pagina di service e ci permette di utilizzare la funzione login() che è stata creata all'interno della pagina loginService.
+    //
   }
 
 }

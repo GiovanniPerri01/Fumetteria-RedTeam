@@ -7,7 +7,8 @@
     <img src="assets/icon/logo_devskill@2x.png" width="8%" />
   </div>
 
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <form [formGroup]="loginForm">
+    <!-- tiene traccia del valore e dello stato degli elementi presenti in input (username - password) -->
     <br />
     <ion-grid>
       <ion-row class="ion-text-center">
@@ -29,6 +30,8 @@
               [(ngModel)]="username"
               formControlName="username"
             ></ion-input>
+            <!-- attraverso il data binding ngModel passiamo il valore preso in input al typescript della pagina di Login. 
+            Questi dati vengono utilizzati nella funzione di "login()" - presente nel TS - per poter sfruttare il service collegato al BE-->
             <ion-icon color="secondary" slot="end" name="mail"></ion-icon>
           </ion-item>
           <h6 style="font-size: small; color: grey">Inserisci username</h6>
@@ -46,7 +49,7 @@
               color="primary"
               placeholder="password"
               type="password"
-              [(ngModel)]="password"  
+              [(ngModel)]="password"
               formControlName="password"
             ></ion-input>
             <ion-icon
@@ -62,23 +65,17 @@
       <ion-row>
         <ion-col></ion-col>
         <ion-col class="ion-text-right">
-          <ion-button color="secondary" [disabled]="!loginForm.valid" type="submit">Login</ion-button>
+          <ion-button
+            color="secondary"
+            [disabled]="!loginForm.valid"
+            (click)="login()"
+            >Login</ion-button
+          > <!--disabilita il bottone quando non è valido-->
         </ion-col>
-        <ion-col></ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col></ion-col>
-
-        <ion-col>
-          <div *ngIf="loginForm.errors?.unauthenticated">
-            <label class="ion-text-center">ASD</label>
-          </div>
-        </ion-col>
-
         <ion-col></ion-col>
       </ion-row>
     </ion-grid>
   </form>
 </ion-content>
 <app-toolbar-inferiore></app-toolbar-inferiore>
+<!-- implementato il componente toolbar-inferiore-->
