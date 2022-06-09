@@ -21,6 +21,9 @@ export class HomePage {
     this.serviceCard.fumetti().subscribe(resp=>{
       const lista:ListaFumetti = resp;
       this.lista = lista.list;
+      for(let i = this.lista.length-1; i>=5; i--){
+        this.lista.pop()
+      }
   })
 
 }
