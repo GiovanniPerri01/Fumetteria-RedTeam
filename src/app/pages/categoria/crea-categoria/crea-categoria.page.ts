@@ -10,24 +10,22 @@ import { CreaCategoriaService } from './crea-categoria.service';
 })
 export class CreaCategoriaPage implements OnInit {
   categoriaForm;
-  name:string;
-  description:string;
+  name: string;
+  description: string;
 
-  constructor(private fb:FormBuilder, private cc:CreaCategoriaService) {
-    this.categoriaForm = fb.group({ 
-      nome : ['', [Validators.required]],
-      descrizione : ['', [Validators.required]]
-    })
-   }
-
-   creaCategoria () { this.cc.creaCategoria(this.name , this.description).subscribe(resp =>{
-    const categoria:CreaCategoriaDto = resp;
-    console.log (categoria);
-  } ) ;
-
-   }
-
-  ngOnInit() {
+  constructor(private fb: FormBuilder, private cc: CreaCategoriaService) {
+    this.categoriaForm = fb.group({
+      nome: ['', [Validators.required]],
+      descrizione: ['', [Validators.required]],
+    });
   }
 
+  creaCategoria() {
+    this.cc.creaCategoria(this.name, this.description).subscribe((resp) => {
+      const categoria: CreaCategoriaDto = resp;
+      console.log(categoria);
+    });
+  }
+
+  ngOnInit() {}
 }

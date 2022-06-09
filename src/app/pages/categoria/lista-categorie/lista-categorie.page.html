@@ -37,12 +37,14 @@
         <ion-col> DESCRIZIONE </ion-col>
         <ion-col class="ion-text-center"> AZIONE </ion-col>
       </ion-row>
-      <ion-grid>
+      <ion-grid><!-- for(let i = 0; i < lista.lenght; i++) { nome=lista[i].name; descrizione=list[i].description  }-->
         <app-oggetto-categoria
           *ngFor="let Categoria of lista"
           nome="{{Categoria.name}}"
           descrizione="{{Categoria.description}}"
-        ></app-oggetto-categoria>
+        ></app-oggetto-categoria><!-- richiamo il componente e tramite un ngFor che va da 0 all'ultimo elemento della 
+          lista(oggetto di tipo ListaCategoriaDTO che contiene tutte le categorie con struttura JSON) passo i dati 
+          nel componente tramite "nome=..." e "descrizione=..." (Categoria rappresenta il singolo elemento della lista[i])-->
       </ion-grid>
     </ion-grid>
     <br /><br />
