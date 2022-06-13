@@ -66,7 +66,37 @@
           </ion-item>
         </ion-list>
       </ion-menu-toggle>
+
+      
     </div>
+
+    <div>
+      <ion-item (click)="fumetti === 1 ? fumetti = 0 : fumetti = 1" color="secondary" button="true">
+        <ion-label>
+        Fumetti
+      </ion-label>
+      </ion-item>
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item [hidden]="!fumetti" [routerLink]="['/crea-fumetto']"
+            color="secondary">
+            <ion-label style="padding-left: 15%;">Crea Fumetto</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-list style="padding: 0px;">
+          <ion-item [hidden]="!fumetti" [routerLink]="['/lista-fumetti']"
+            color="secondary">
+            <ion-label style="padding-left: 15%;">Lista Fumetti</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+    </div>
+
+
+
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main-content"></ion-router-outlet>
