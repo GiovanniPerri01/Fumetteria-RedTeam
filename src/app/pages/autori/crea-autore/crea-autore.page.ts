@@ -11,8 +11,7 @@ import { SalvaAutoreService } from './salva-autore.service';
 })
 export class CreaAutorePage implements OnInit {
   salvaform;
-  nome:string;
-  cognome:string; 
+   
 
   constructor(private fb:FormBuilder , private sca: SalvaAutoreService) {
     this.salvaform = fb.group({
@@ -26,7 +25,7 @@ export class CreaAutorePage implements OnInit {
 
   salvaAutore (){
 
-    this.sca.salvaAutore(this.nome , this.cognome).subscribe(resp =>{
+    this.sca.salvaAutore(this.salvaform.controls.nome.value , this.salvaform.controls.cognome.value).subscribe(resp =>{
       const autore:AutoreDTO = resp;
       console.log (autore);
     } ) ;

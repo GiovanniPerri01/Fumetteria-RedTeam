@@ -16,8 +16,7 @@ export class ListaAutoriPage implements OnInit {
 
   ngOnInit() {
     this.serviceLista.autori().subscribe(resp=>{
-      const lista:ListaAutoriDto = resp;
-      this.lista = lista.list;
+      this.lista = resp.list;
     })
   }
 

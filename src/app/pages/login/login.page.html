@@ -27,7 +27,6 @@
               color="primary"
               placeholder="username"
               type="text"
-              [(ngModel)]="username"
               formControlName="username"
             ></ion-input>
             <!-- attraverso il data binding ngModel passiamo il valore preso in input al typescript della pagina di Login. 
@@ -49,7 +48,6 @@
               color="primary"
               placeholder="password"
               type="password"
-              [(ngModel)]="password"
               formControlName="password"
             ></ion-input>
             <ion-icon
@@ -70,7 +68,8 @@
             [disabled]="!loginForm.valid"
             (click)="login()"
             >Login</ion-button
-          > <!--disabilita il bottone quando non è valido-->
+          >
+          <!--disabilita il bottone quando non è valido-->
         </ion-col>
         <ion-col></ion-col>
       </ion-row>

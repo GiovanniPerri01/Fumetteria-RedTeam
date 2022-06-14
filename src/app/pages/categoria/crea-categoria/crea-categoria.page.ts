@@ -10,8 +10,7 @@ import { CreaCategoriaService } from './crea-categoria.service';
 })
 export class CreaCategoriaPage implements OnInit {
   categoriaForm;
-  name: string;
-  description: string;
+
 
   constructor(private fb: FormBuilder, private cc: CreaCategoriaService) {
     this.categoriaForm = fb.group({
@@ -21,7 +20,7 @@ export class CreaCategoriaPage implements OnInit {
   }
 
   creaCategoria() {
-    this.cc.creaCategoria(this.name, this.description).subscribe((resp) => {
+    this.cc.creaCategoria(this.categoriaForm.controls.nome.value,this.categoriaForm.controls.descrizione.value).subscribe((resp) => {
       const categoria: CreaCategoriaDto = resp;
       console.log(categoria);
     });

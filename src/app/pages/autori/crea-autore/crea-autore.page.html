@@ -16,11 +16,11 @@
               <ion-input
                 id="nome"
                 name="nome"
-                [(ngModel)]="nome"
                 placeholder="Nome"
                 color="primary"
                 type="text"
-                formControlName="nome">
+                formControlName="nome"
+              >
               </ion-input>
             </ion-item>
           </ion-col>
@@ -30,7 +30,6 @@
               <ion-input
                 id="cognome"
                 name="cognome"
-                [(ngModel)]="cognome"
                 placeholder="Cognome"
                 color="primary"
                 type="text"
@@ -43,7 +42,11 @@
         <br />
         <ion-row>
           <ion-col class="ion-text-right">
-            <ion-button color="secondary" [disabled]="!salvaform.valid" (click)="salvaAutore()">
+            <ion-button
+              color="secondary"
+              [disabled]="!salvaform.valid"
+              (click)="salvaAutore()"
+            >
               Salva
             </ion-button>
           </ion-col>

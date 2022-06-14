@@ -12,8 +12,7 @@ import { LoginService } from './login.service';
 export class LoginPage implements OnInit {
 
   loginForm; //si riferisce al nome del FormGroup
-  username:string;
-  password:string;
+ 
 
   constructor(private fb:FormBuilder, private servizioLogin:LoginService, private router:Router) {
   //abbiamo creato un oggetto fb di tipo FormBuilder per poter verificare che i campi siano presenti e validi
@@ -30,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   login(){
-    this.servizioLogin.login(this.username, this.password).subscribe((resp) =>{
+    this.servizioLogin.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value).subscribe((resp) =>{
       const user:UserDTO = resp; 
       console.log(user);
       this.router.navigate(['/home']);
