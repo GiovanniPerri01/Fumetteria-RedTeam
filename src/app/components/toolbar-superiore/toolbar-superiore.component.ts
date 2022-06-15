@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, LOCALE_ID, OnInit } from '@angular/core';
+import { UserDTO } from 'src/app/model/package/dto/user-dto';
 
 @Component({
   selector: 'app-toolbar-superiore',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar-superiore.component.scss'],
 })
 export class ToolbarSuperioreComponent implements OnInit {
+  nome:string;
+  cognome:string;
+  email:string;
 
-  constructor() { }
+  constructor() { 
+    this.nome = localStorage.getItem("nome");
+    this.cognome = localStorage.getItem("cognome");
+    this.email = localStorage.getItem("email");
+  }
 
   ngOnInit() {}
 

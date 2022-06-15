@@ -12,7 +12,6 @@ import { LoginService } from './login.service';
 export class LoginPage implements OnInit {
 
   loginForm; //si riferisce al nome del FormGroup
- 
 
   constructor(private fb:FormBuilder, private servizioLogin:LoginService, private router:Router) {
   //abbiamo creato un oggetto fb di tipo FormBuilder per poter verificare che i campi siano presenti e validi
@@ -33,6 +32,9 @@ export class LoginPage implements OnInit {
       const user:UserDTO = resp; 
       console.log(user);
       this.router.navigate(['/home']);
+      localStorage.setItem("nome", user.name);
+      localStorage.setItem("cognome", user.surname);
+      localStorage.setItem("email", user.email);
     }); 
     //la funzione login() permette di mandare i dati presi in input al serivzio di Login che li controlla permettendo l'accesso alla homepage.
     //servizioLogin è un oggetto dichirato nel costruttore di tipo LoginService che permette di vedere quello che sta dentro la pagina di service;
